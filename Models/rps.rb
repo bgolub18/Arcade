@@ -2,10 +2,6 @@ class Player
 	@@players = []
 	attr_writer :shot
 	attr_reader :name
-	def initialize
-		return "What is your name?"
-		@name = gets.chomp
-	end	
 end	
 
 class Game
