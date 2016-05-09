@@ -1,5 +1,6 @@
 require 'sinatra'
 require_relative 'Models/rps.rb'
+enable :sessions
 
 get '/' do
 
@@ -7,8 +8,9 @@ get '/' do
 end
 
 post '/' do
-	play(params[:name])
-
+	rps = Game.new
+	rps.play(params[:choice])
+	
 end
 
 get '/:score' do

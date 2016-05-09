@@ -8,8 +8,8 @@ class Game
 	def initialize
 		return "Welcome to RPS 2016!"
 	end
-	def play(player)
-			return "#{player.name}, choose rock, paper, or scissors."
+	def play(choice)
+			
 			@options = ["rock", "paper", "scissors"]
 			@computer = @options.sample
 			case [@shot, @computer]
@@ -22,14 +22,10 @@ class Game
 					return "You lost"
 					@loses = @loses + 1
 				end
-			play(player)	
+		
 	end
 end
 
-player = Player.new
-
-rps = Game.new
-rps.play(player)
 
 						
 
