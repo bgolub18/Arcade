@@ -3,25 +3,15 @@ require_relative 'Models/rps.rb'
 enable :sessions
 
 get '/' do
-
+	session[:game]= Game.new
+	session[:wins] = @wins
+	session[:loses] = @loses
 	erb :index
 end
 
 post '/' do
-	rps = Game.new
-	rps.play(params[:choice])
-	
+	game = session[:game] 
+	@game = game.play(params[:choice])
+	erb :results
 end
 
-get '/:score' do
-	case params[:score]
-	when "1-0"
-		
-	when "0-1"
-
-	when "0-0"
-
-	when "1-1"	
-
-	end
-end		
